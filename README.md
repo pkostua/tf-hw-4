@@ -7,7 +7,7 @@ https://github.com/netology-code/ter-homeworks/blob/main/04/hw-04.md
 скриншот консоли ВМ yandex cloud  
 ![image](https://github.com/user-attachments/assets/707e04cf-4a9d-4dc6-9784-835eab8084ad)
 ![image](https://github.com/user-attachments/assets/eb06a3e8-df11-4f24-8144-548cde07cd3f)  
-Скриншот содержимого модуля
+Скриншот содержимого модуля  
 ![image](https://github.com/user-attachments/assets/714a7ce9-5c58-43e7-aa61-ef4eb7474a13)
 
 
