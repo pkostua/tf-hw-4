@@ -36,6 +36,10 @@ $ terraform import module.marketing-vm.yandex_compute_instance.vm[0] fhmgdr7q5h8
 $ terraform import module.vpc_dev.yandex_vpc_network.network enp3u75uaa7a5tbbujeq
 $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 ```
-
+### Проверяем план выполнения 
+![image](https://github.com/user-attachments/assets/23b5a8a7-17ca-49a5-a51c-833beb525053)  
+Во первых нужно понять откуда взялся этот параметр allow_stopping_for_update. Мы его не задавали, значит скорее всего модуль сделал эту работу. Так и есть, задается вот здесь https://github.com/udjin10/yandex_compute_instance/blob/main/main.tf
+Но почему терраформ не импортировал этот параметр. Видимо провайдер-Яндекс по какойто причине не отдал информацию об этом папраметре в терраформ. И тут вспоминаем первую лекцию Терраформ же работает по АПИ!!!. Давайте найдем описание метода апи, кторый возвращает данные о ВМ.  
+Нашлось описание метода вот здесь https://yandex.cloud/ru/docs/compute/api-ref/Instance/get. И ничего похожего на allow_stopping_for_update. Скорее всего АПИ яндекса не передает в терраформ это поле, отсюда и два изменения.
 
 
