@@ -9,6 +9,9 @@ https://github.com/netology-code/ter-homeworks/blob/main/04/hw-04.md
 ![image](https://github.com/user-attachments/assets/eb06a3e8-df11-4f24-8144-548cde07cd3f)    
 Скриншот содержимого модуля  
 ![image](https://github.com/user-attachments/assets/714a7ce9-5c58-43e7-aa61-ef4eb7474a13)  
+## Задание 2
+### Скриншот информации о модуле
+![image](https://github.com/user-attachments/assets/e520af71-8736-460e-a6b2-4323126b2a2f)
 
 
 
