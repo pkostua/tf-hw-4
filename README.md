@@ -11,7 +11,8 @@ https://github.com/netology-code/ter-homeworks/blob/main/04/hw-04.md
 ![image](https://github.com/user-attachments/assets/714a7ce9-5c58-43e7-aa61-ef4eb7474a13)  
 ## Задание 2
 ### Скриншот информации о модуле
-![image](https://github.com/user-attachments/assets/e520af71-8736-460e-a6b2-4323126b2a2f)
+![image](https://github.com/user-attachments/assets/e520af71-8736-460e-a6b2-4323126b2a2f)  
+Информация, сгенерированная terraform-docs находится в readme.md модуля
 
 
 
