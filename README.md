@@ -14,5 +14,28 @@ https://github.com/netology-code/ter-homeworks/blob/main/04/hw-04.md
 ![image](https://github.com/user-attachments/assets/e520af71-8736-460e-a6b2-4323126b2a2f)  
 Информация, сгенерированная terraform-docs находится в readme.md модуля
 
+## Задание 3
+### Список стейта
+```
+$ terraform state list
+data.template_file.cloudinit
+module.analytics-vm.data.yandex_compute_image.my_image
+module.analytics-vm.yandex_compute_instance.vm[0]
+module.marketing-vm.data.yandex_compute_image.my_image
+module.marketing-vm.yandex_compute_instance.vm[0]
+module.vpc_dev.yandex_vpc_network.network
+module.vpc_dev.yandex_vpc_subnet.subnet
+```
+### Удаляем ресурсы
+![image](https://github.com/user-attachments/assets/7c5c02ec-5a70-4066-a779-e4cddca1fbca)
+### Возвращаем ресурсы.
+Кончно же мы не сделаи бакап и не посмотрели terraform show. Сходим в консоль яндекса и перепишем идентификаторы
+```
+$ terraform import module.analytics-vm.yandex_compute_instance.vm[0] fhmn2cgrn9rmd0n21se8
+$ terraform import module.marketing-vm.yandex_compute_instance.vm[0] fhmgdr7q5h8lb43i9913
+$ terraform import module.vpc_dev.yandex_vpc_network.network enp3u75uaa7a5tbbujeq
+$ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
+```
+
 
 
