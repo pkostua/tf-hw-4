@@ -117,13 +117,13 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
       + zone           = "ru-central1-b"
     }
 
-  # module.vpc_prod.yandex_vpc_subnet.subnet["ru-central1-c"] will be created
+  # module.vpc_prod.yandex_vpc_subnet.subnet["ru-central1-d"] will be created
   + resource "yandex_vpc_subnet" "subnet" {
       + created_at     = (known after apply)
       + folder_id      = (known after apply)
       + id             = (known after apply)
       + labels         = (known after apply)
-      + name           = "production-subnet-ru-central1-c"
+      + name           = "production-subnet-ru-central1-d"
       + network_id     = (known after apply)
       + v4_cidr_blocks = [
           + "10.0.3.0/24",
