@@ -25,9 +25,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr"></a> [cidr](#input\_cidr) | https://cloud.yandex.ru/docs/vpc/operations/subnet-create | `list(string)` | n/a | yes |
 | <a name="input_env_name"></a> [env\_name](#input\_env\_name) | На основе этой строки будет сгеренировано имя сети и подсети | `string` | n/a | yes |
-| <a name="input_zone"></a> [zone](#input\_zone) | https://cloud.yandex.ru/docs/overview/concepts/geo-scope | `string` | n/a | yes |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | list of subnet params | <pre>list(object({<br/>    zone: string,<br/>    cidr: string<br/>  }))</pre> | n/a | yes |
 
 ## Outputs
 
