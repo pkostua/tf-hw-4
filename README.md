@@ -197,3 +197,35 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 Получился клсатер  
 ![image](https://github.com/user-attachments/assets/e877f0c9-d1e2-4d68-9055-b2ba31d713a2)
 
+Меняем ha = true
+```
+  # module.mysql_cluster.yandex_mdb_mysql_cluster.this will be updated in-place
+  ~ resource "yandex_mdb_mysql_cluster" "this" {
+        id                        = "c9qhu6sfq3poovpc6mp1"
+        name                      = "klaster"
+        # (15 unchanged attributes hidden)
+
+      + host {
+          + assign_public_ip = false
+          + subnet_id        = (known after apply)
+          + zone             = "ru-central1-b"
+        }
+
+        # (6 unchanged blocks hidden)
+    }
+
+  # module.mysql_cluster.yandex_vpc_subnet.cluster_subnets[1] will be created
+  + resource "yandex_vpc_subnet" "cluster_subnets" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = (known after apply)
+      + network_id     = "enpahaaqqarh7ve1obkh"
+      + v4_cidr_blocks = [
+          + "10.0.2.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-b"
+    }
+```
