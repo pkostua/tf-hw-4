@@ -194,3 +194,6 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
         }
     }
 ```
+Получился клсатер  
+![image](https://github.com/user-attachments/assets/e877f0c9-d1e2-4d68-9055-b2ba31d713a2)
+
