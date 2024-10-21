@@ -44,3 +44,93 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 Нашлось описание метода вот здесь https://yandex.cloud/ru/docs/compute/api-ref/Instance/get. И ничего похожего на allow_stopping_for_update. Скорее всего АПИ яндекса не передает в терраформ это поле, отсюда и два изменения.
 
 
+## Задание 3
+### Код
+Добавить ссылку
+### План выполнения
+Вот кусок плана, свзянного с сетями
+```
+ # module.vpc_dev.yandex_vpc_network.network will be created
+  + resource "yandex_vpc_network" "network" {
+      + created_at                = (known after apply)
+      + default_security_group_id = (known after apply)
+      + folder_id                 = (known after apply)
+      + id                        = (known after apply)
+      + labels                    = (known after apply)
+      + name                      = "develop"
+      + subnet_ids                = (known after apply)
+    }
+
+  # module.vpc_dev.yandex_vpc_subnet.subnet["ru-central1-a"] will be created
+  + resource "yandex_vpc_subnet" "subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "develop-subnet-ru-central1-a"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "10.0.1.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-a"
+    }
+
+  # module.vpc_prod.yandex_vpc_network.network will be created
+  + resource "yandex_vpc_network" "network" {
+      + created_at                = (known after apply)
+      + default_security_group_id = (known after apply)
+      + folder_id                 = (known after apply)
+      + id                        = (known after apply)
+      + labels                    = (known after apply)
+      + name                      = "production"
+      + subnet_ids                = (known after apply)
+    }
+
+  # module.vpc_prod.yandex_vpc_subnet.subnet["ru-central1-a"] will be created
+  + resource "yandex_vpc_subnet" "subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "production-subnet-ru-central1-a"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "10.0.1.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-a"
+    }
+
+  # module.vpc_prod.yandex_vpc_subnet.subnet["ru-central1-b"] will be created
+  + resource "yandex_vpc_subnet" "subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "production-subnet-ru-central1-b"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "10.0.2.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-b"
+    }
+
+  # module.vpc_prod.yandex_vpc_subnet.subnet["ru-central1-c"] will be created
+  + resource "yandex_vpc_subnet" "subnet" {
+      + created_at     = (known after apply)
+      + folder_id      = (known after apply)
+      + id             = (known after apply)
+      + labels         = (known after apply)
+      + name           = "production-subnet-ru-central1-c"
+      + network_id     = (known after apply)
+      + v4_cidr_blocks = [
+          + "10.0.3.0/24",
+        ]
+      + v6_cidr_blocks = (known after apply)
+      + zone           = "ru-central1-c"
+    }
+```
+### Скриншот из консоли
+![image](https://github.com/user-attachments/assets/e61c9c6b-dbc9-4458-b8bb-b52e0f19695a)
