@@ -44,7 +44,7 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 Нашлось описание метода вот здесь https://yandex.cloud/ru/docs/compute/api-ref/Instance/get. И ничего похожего на allow_stopping_for_update. Скорее всего АПИ яндекса не передает в терраформ это поле, отсюда и два изменения.
 
 
-## Задание 3
+## Задание 4
 ### Код
 Добавить ссылку
 ### План выполнения
@@ -134,3 +134,63 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 ```
 ### Скриншот из консоли
 ![image](https://github.com/user-attachments/assets/e61c9c6b-dbc9-4458-b8bb-b52e0f19695a)
+
+## Задание 5
+План выполнения при ha = false  
+```
+  # module.mysql_cluster.yandex_mdb_mysql_cluster.this will be created
+  + resource "yandex_mdb_mysql_cluster" "this" {
+      + allow_regeneration_host   = false
+      + backup_retain_period_days = (known after apply)
+      + created_at                = (known after apply)
+      + deletion_protection       = (known after apply)
+      + environment               = "PRESTABLE"
+      + folder_id                 = (known after apply)
+      + health                    = (known after apply)
+      + host_group_ids            = (known after apply)
+      + id                        = (known after apply)
+      + mysql_config              = (known after apply)
+      + name                      = "klaster"
+      + network_id                = "enpahaaqqarh7ve1obkh"
+      + status                    = (known after apply)
+      + version                   = "8.0"
+
+      + host {
+          + assign_public_ip   = false
+          + fqdn               = (known after apply)
+          + replication_source = (known after apply)
+          + subnet_id          = "e9brbbrb4fk7e8n5b4jq"
+          + zone               = "ru-central1-a"
+        }
+
+      + resources {
+          + disk_size          = 16
+          + disk_type_id       = "network-ssd"
+          + resource_preset_id = "s2.micro"
+        }
+    }
+
+  # module.mysql_config.yandex_mdb_mysql_database.this will be created
+  + resource "yandex_mdb_mysql_database" "this" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+      + name       = "test"
+    }
+
+  # module.mysql_config.yandex_mdb_mysql_user.this will be created
+  + resource "yandex_mdb_mysql_user" "this" {
+      + authentication_plugin = (known after apply)
+      + cluster_id            = (known after apply)
+      + global_permissions    = (known after apply)
+      + id                    = (known after apply)
+      + name                  = "user"
+      + password              = (sensitive value)
+
+      + permission {
+          + database_name = "test"
+          + roles         = [
+              + "ALL",
+            ]
+        }
+    }
+```
