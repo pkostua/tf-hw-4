@@ -129,7 +129,7 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
           + "10.0.3.0/24",
         ]
       + v6_cidr_blocks = (known after apply)
-      + zone           = "ru-central1-c"
+      + zone           = "ru-central1-d"
     }
 ```
 ### Скриншот из консоли
