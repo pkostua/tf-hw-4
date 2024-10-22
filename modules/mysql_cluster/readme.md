@@ -25,6 +25,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cluster_hosts_count"></a> [cluster\_hosts\_count](#input\_cluster\_hosts\_count) | Number of cluster hosts | `number` | `2` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Имя кластера | `string` | n/a | yes |
 | <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Version of the MySQL cluster. | `string` | `"8.0"` | no |
 | <a name="input_ha"></a> [ha](#input\_ha) | Флаг для включения высокой доступности | `bool` | `false` | no |

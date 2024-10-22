@@ -8,7 +8,8 @@ terraform {
 }
 
 resource "yandex_vpc_subnet" "cluster_subnets" {
-  count = var.ha ? 2 : 1
+  #Создаем одну подсеть для ha = false, a для true столько, сколько передали в переменной
+  count = var.ha ? length(var.zones) : 1
   zone = var.zones[count.index].zone
   v4_cidr_blocks = [var.zones[count.index].cidr]
   network_id = var.network_id
@@ -28,10 +29,11 @@ resource "yandex_mdb_mysql_cluster" "this" {
   }
 
   dynamic "host" {
-    for_each = yandex_vpc_subnet.cluster_subnets
+    for_each = range(var.ha?var.cluster_hosts_count : 1)
     content {
-      zone = host.value.zone
-      subnet_id = host.value.id
+      #Подсеть хоста выбирается по порядку путем определния остатка от деления  номера текущего хоста на число подсетей
+      zone = yandex_vpc_subnet.cluster_subnets[host.key % length(var.zones)].zone
+      subnet_id = yandex_vpc_subnet.cluster_subnets[host.key % length(var.zones)].id
     }
 
   }

@@ -38,3 +38,9 @@ variable "cluster_version" {
   default = "8.0"
   description = "Version of the MySQL cluster."
 }
+
+variable "cluster_hosts_count" {
+  type = number
+  default = 2
+  description = "Number of cluster hosts"
+}
