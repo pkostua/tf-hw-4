@@ -46,7 +46,7 @@ $ terraform import module.vpc_dev.yandex_vpc_subnet.subnet e9bgtq87c1546s6ng2o8
 
 ## Задание 4
 ### Код
-Добавить ссылку
+https://github.com/pkostua/tf-hw-4/tree/terraform-04/modules/vpc
 ### План выполнения
 Вот кусок плана, свзянного с сетями
 ```
